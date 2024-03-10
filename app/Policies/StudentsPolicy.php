@@ -13,6 +13,10 @@ class StudentsPolicy
      */
     public function viewAny(User $user): bool
     {
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }
+
         return true;
     }
 
@@ -29,6 +33,11 @@ class StudentsPolicy
      */
     public function create(User $user): bool
     {
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
         return true;
     }
 
@@ -37,6 +46,11 @@ class StudentsPolicy
      */
     public function update(User $user, Students $students): bool
     {
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
         return true;
     }
 
@@ -45,6 +59,11 @@ class StudentsPolicy
      */
     public function delete(User $user, Students $students): bool
     {
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
         return true;
     }
 
@@ -61,6 +80,11 @@ class StudentsPolicy
      */
     public function forceDelete(User $user, Students $students): bool
     {
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
         return true;
     }
 }

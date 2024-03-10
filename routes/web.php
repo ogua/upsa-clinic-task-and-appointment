@@ -14,7 +14,13 @@ use App\Http\Controllers\Webcontroller;
 |
 */
 
-Route::get('/', [Webcontroller::class, 'home'])->name('home');
+//Route::get('/', [Webcontroller::class, 'home'])->name('home');
+
+Route::get('/', function(){
+    return redirect()->to('/admin');
+});
+
+Route::get('/report', [Webcontroller::class, 'report'])->name('report');
 
 Route::get('/about', [Webcontroller::class, 'about'])->name('about');
 

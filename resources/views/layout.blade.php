@@ -57,7 +57,7 @@
 					<span class="icon-bar"></span>
 				  </button>
 					<div class="logo">
-						<h1><a class="navbar-brand" href="index.html"><span>H</span>ealth <i class="fa fa-plus" aria-hidden="true"></i> <p>Quality Care 4U</p></a></h1>
+						<h1><a class="navbar-brand" href="/"><span>UP</span>SA <i class="fa fa-plus" aria-hidden="true"></i> <p>CLINIC</p></a></h1>
 					</div>
 				</div>
 

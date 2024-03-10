@@ -13,7 +13,12 @@ class SpecialistsPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -21,7 +26,12 @@ class SpecialistsPolicy
      */
     public function view(User $user, Specialists $specialists): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -29,7 +39,12 @@ class SpecialistsPolicy
      */
     public function create(User $user): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -37,7 +52,12 @@ class SpecialistsPolicy
      */
     public function update(User $user, Specialists $specialists): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -45,7 +65,12 @@ class SpecialistsPolicy
      */
     public function delete(User $user, Specialists $specialists): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -53,7 +78,12 @@ class SpecialistsPolicy
      */
     public function restore(User $user, Specialists $specialists): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -61,6 +91,11 @@ class SpecialistsPolicy
      */
     public function forceDelete(User $user, Specialists $specialists): bool
     {
-        //
+        if (isset($user->roles[0]->name) && $user->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset($user->roles[0]->name) && $user->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;
     }
 }

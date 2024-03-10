@@ -13,7 +13,7 @@ class TaskremindersPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class TaskremindersPolicy
      */
     public function view(User $user, Taskreminders $taskreminders): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class TaskremindersPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class TaskremindersPolicy
      */
     public function update(User $user, Taskreminders $taskreminders): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class TaskremindersPolicy
      */
     public function delete(User $user, Taskreminders $taskreminders): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class TaskremindersPolicy
      */
     public function restore(User $user, Taskreminders $taskreminders): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class TaskremindersPolicy
      */
     public function forceDelete(User $user, Taskreminders $taskreminders): bool
     {
-        //
+        return true;
     }
 }

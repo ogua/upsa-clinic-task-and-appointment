@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\StudentsResource\Pages;
 
 use App\Filament\Resources\StudentsResource;
+use App\Models\Patients;
 use App\Models\Students;
 use App\Models\User;
 use Filament\Actions;
@@ -19,8 +20,6 @@ class CreateStudents extends CreateRecord
         $data['status'] = true;
         $data['enrol_id'] = uniqid();
         $data['indexnumber'] = "101".rand(0,9999);
-        $data['admitted'] = uniqid();
-        $data['admitted'] = uniqid();
     
         return $data;
     }
@@ -43,6 +42,7 @@ class CreateStudents extends CreateRecord
 
         $index = $data->indexnumber;
         $name = $data->last_name." ".$data->first_name;
+        $email = $data->email;
 
         $user = User::create([
             'name' => $name,
@@ -55,7 +55,12 @@ class CreateStudents extends CreateRecord
 
         $student = Students::where('id',$data->id)->first();
         $student->user_id = $user->id;
+        $student->currentlevel = $student->entrylevel;
         $student->save();
+
+        $updatepatient = Patients::where('email',$email)->first();
+        $updatepatient->user_id = $user->id;
+        $updatepatient->save();
 
     }
 

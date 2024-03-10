@@ -15,4 +15,9 @@ class Webcontroller extends Controller
     {
         return view('about');
     }
+
+    public function report(Request $request)
+    {
+        //dd($request);
+    }
 }

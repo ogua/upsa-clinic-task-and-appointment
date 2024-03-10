@@ -13,7 +13,7 @@ class MedicaltaskPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -21,7 +21,7 @@ class MedicaltaskPolicy
      */
     public function view(User $user, Medicaltask $medicaltask): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -29,7 +29,7 @@ class MedicaltaskPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -37,7 +37,7 @@ class MedicaltaskPolicy
      */
     public function update(User $user, Medicaltask $medicaltask): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -45,7 +45,7 @@ class MedicaltaskPolicy
      */
     public function delete(User $user, Medicaltask $medicaltask): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -53,7 +53,7 @@ class MedicaltaskPolicy
      */
     public function restore(User $user, Medicaltask $medicaltask): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 
     /**
@@ -61,6 +61,6 @@ class MedicaltaskPolicy
      */
     public function forceDelete(User $user, Medicaltask $medicaltask): bool
     {
-        //
+        return isset($user->roles[0]->name) && $user->roles[0]->name != "Student" ? true : false;
     }
 }

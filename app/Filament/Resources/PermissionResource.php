@@ -24,6 +24,16 @@ class PermissionResource extends Resource
     protected static ?string $modelLabel = 'Permissions';
     protected static ?int $navigationSort = 2;
 
+    public static function shouldRegisterNavigation(): bool
+    {
+        if (isset(auth()->user()->roles[0]->name) && auth()->user()->roles[0]->name == "Student") {
+            return false;
+        }elseif(isset(auth()->user()->roles[0]->name) && auth()->user()->roles[0]->name == "Doctor"){
+            return false;
+        }
+        return true;;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
