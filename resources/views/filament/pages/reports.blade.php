@@ -8,8 +8,3 @@
          
     </x-filament-panels::form>
 </x-filament-panels::page>
-@push('scripts')
-<script>
-    alert("working);
-</script>
-@endpush

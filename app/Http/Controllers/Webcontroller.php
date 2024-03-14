@@ -32,6 +32,6 @@ class Webcontroller extends Controller
             $reports = Medicaltask::whereBetween('created_at',[$from_date,$to_date])->get();
         }
         
-        return view('pdfreport.blade.php',compact('reports','$from_date','$to_date','$report_type'));
+        return view('pdfreport',compact('reports','from_date','to_date','report_type'));
     }
 }
