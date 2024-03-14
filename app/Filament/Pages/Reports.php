@@ -15,11 +15,11 @@ use Filament\Pages\Concerns\InteractsWithFormActions;
 class Reports extends Page
 {
     use InteractsWithFormActions;
-
+    
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-
+    
     protected static string $view = 'filament.pages.reports';
-
+    
     protected static ?string $title = 'Generate report';
     
     protected static ?string $navigationGroup = 'Settings';
@@ -46,9 +46,8 @@ class Reports extends Page
     {
         
         $data = $this->form->getState();
-        //logger($data);
         
-        return redirect()->to('/report');
+        return redirect()->to("/report-detials/{$data['from_date']}/{$data['to_date']}/{$data['report_type']}");
         
         //$this->getSavedNotification()->send();
     }
@@ -68,31 +67,32 @@ class Reports extends Page
             Forms\Components\Section::make('')
             ->description('')
             ->schema([
-
+                
                 Forms\Components\DatePicker::make('from_date')
-               // ->label('Appointment date')
-               ->extraAttributes([
-                'name' => 'from_date',
-                ])
-                ->required(),
-
-                Forms\Components\DatePicker::make('to_date')
                 // ->label('Appointment date')
                 ->extraAttributes([
-                    'name' => 'to_date',
+                    'name' => 'from_date',
                     ])
-                 ->required(),
-                
-                
-                Forms\Components\Select::make('report_type')
-                ->options([
-                    'Appointments' => 'Appointments',
-                    'Medical tasks' => 'Medical tasks',
-                ])
-                ->searchable()
-                ->required(),
-                
-                ])->columns(3)
-                ])->statePath('data');
-            }
-}
+                    ->required(),
+                    
+                    Forms\Components\DatePicker::make('to_date')
+                    // ->label('Appointment date')
+                    ->extraAttributes([
+                        'name' => 'to_date',
+                        ])
+                        ->required(),
+                        
+                        
+                        Forms\Components\Select::make('report_type')
+                        ->options([
+                            'Appointments' => 'Appointments',
+                            'Medical tasks' => 'Medical tasks',
+                            ])
+                            ->searchable()
+                            ->required(),
+                            
+                            ])->columns(3)
+                            ])->statePath('data');
+                        }
+                    }
+                    

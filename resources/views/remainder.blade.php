@@ -50,14 +50,10 @@ Dear {{ $data['fullname'] }}, <br>
 I hope this message finds you well. <br>
 We would like to remind you about the upcoming task scheduled for {{ $data['reminder'] }}. As the deadline approaches, it's crucial to ensure that all necessary preparations are in place to guarantee a smooth and successful execution. <br>
 
-**Task Details:** <br>
-- **Task Name:** {{ $data['taskname'] }} <br>
-- **Date and Time:** {{ $data['deadline'] }} <br>
-- **Task Description:** {{ $data['description'] }} <br>
-
-**Task Description:** <br>
-{{ $data['description'] }} <br>
-
+Task Details: <br>
+Task Name: {{ $data['taskname'] }} <br>
+Date and Time: {{ $data['deadline'] }} <br>
+Task Description: {{ $data['description'] }} <br>
 
 Best regards, <br>
 
