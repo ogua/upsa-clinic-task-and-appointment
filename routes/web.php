@@ -27,3 +27,4 @@ Route::get('/about', [Webcontroller::class, 'about'])->name('about');
 Route::get('/contact', [Webcontroller::class, 'contact'])->name('contact');
 
 Route::get('/report-detials/{from_date}/{to_date}/{report_type}', [Webcontroller::class, 'pdfreport']);
+Route::get('/report-download/{from_date}/{to_date}/{report_type}', [Webcontroller::class, 'pdfdownload']);
